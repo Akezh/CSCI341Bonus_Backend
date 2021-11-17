@@ -3,9 +3,9 @@ const userRouter = require('./routes/users.routes')
 const rankingRouter = require('./routes/ranking.routes')
 const countriesRouter = require('./routes/countries.routes')
 const publicServantRouter = require('./routes/publicservant.routes')
-require('dotenv').config();
+// require('dotenv').config();
 
-const PORT = process.env.PORT || 8000
+const PORT = 8000
 
 const app = express()
 const cors = require("cors")
