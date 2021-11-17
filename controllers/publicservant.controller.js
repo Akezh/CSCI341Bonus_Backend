@@ -49,6 +49,7 @@ class PublicServantController {
 
     async getPublicServantsContributions(req, res) {
         try {
+            console.log('top public servant');
             const topPublicServantContributions = await db.query(
                 'SELECT name, surname, num_contributed_records, num_recorded_countries, recorded_total_patients ' +
                 'FROM ( ' +
@@ -60,11 +61,13 @@ class PublicServantController {
                 'INNER JOIN Users u ON u.email = HeroesRecords.email ' +
                 'ORDER BY num_contributed_records DESC;')
 
+            console.log('top public servant contributors', topPublicServantContributions);
             res.json(topPublicServantContributions)
         } catch(error) {
             console.log('error', error);
             res.json({ message: 'The error occured in create user method' })
         }
+
     }
 }
 
