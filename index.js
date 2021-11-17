@@ -2,6 +2,7 @@ const express = require('express')
 const userRouter = require('./routes/users.routes')
 const rankingRouter = require('./routes/ranking.routes')
 const countriesRouter = require('./routes/countries.routes')
+const publicServantRouter = require('./routes/publicservant.routes')
 
 const PORT = process.env.PORT || 8000
 
@@ -10,6 +11,6 @@ const cors = require("cors")
 
 app.use(cors({ origin: "*" }))
 app.use(express.json())
-app.use('/api', userRouter, rankingRouter, countriesRouter)
+app.use('/api', userRouter, rankingRouter, countriesRouter, publicServantRouter)
 
 app.listen(PORT, () => console.log(`server started on post ${PORT} `))
